@@ -1,0 +1,22 @@
+{
+  "name": "reactlearn",
+  "version": "1.0.0",
+  "description": "learn react and redux",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vwadhwa3/ReactLearn.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "varun wadhwa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vwadhwa3/ReactLearn/issues"
+  },
+  "homepage": "https://github.com/vwadhwa3/ReactLearn#readme"
+}
