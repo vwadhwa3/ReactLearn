@@ -18,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/vwadhwa3/ReactLearn/issues"
   },
-  "homepage": "https://github.com/vwadhwa3/ReactLearn#readme"
+  "homepage": "https://github.com/vwadhwa3/ReactLearn#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
