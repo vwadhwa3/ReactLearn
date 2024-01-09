@@ -7,7 +7,8 @@ const RestaurantCard =(props) =>{
         ,name
         ,cuisines
         ,avgRatingString
-        ,costForTwo} = resData?.info
+        ,costForTwo,
+        locality} = resData?.info
     return (
         <div className="res-card" style={{backgroundColor : "#f0f0f0"}}>
             <img className="res-logo" src={CDN_URL+cloudinaryImageId} alt="pizza"></img>
@@ -15,6 +16,7 @@ const RestaurantCard =(props) =>{
             <h4>{cuisines.join(",")}</h4>
             <h4>{avgRatingString}</h4>
             <h4>{costForTwo}</h4>
+            <h6>{locality}</h6>
         </div> 
     )
 }
