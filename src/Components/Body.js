@@ -18,11 +18,11 @@ const Body= ()=>{
      const data = await fetch (MENU_API)
      const json =await data.json();
      console.log("card 4")
-     //debugger
+     debugger
     //console.log(json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants[0].info.locality)
      console.log("fetchData function")
-    setlistOfRestaurants(await json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants)
-    setFilterRestaurants(await json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants)
+    setlistOfRestaurants(await json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
+    setFilterRestaurants(await json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
     }
     // if(listOfRestaurants.length === 0){
     //    return <Shimmer/>
@@ -61,7 +61,7 @@ const Body= ()=>{
                         </div>
                         <div className="res-conatiner"> 
                         {
-                            filterRestaurants?.map(x => <RestaurantCard  key={x.info.id} resData={x} /> )
+                             filterRestaurants?.map(x => <RestaurantCard  key={x.info.id} resData={x} /> )
                         }
                         </div>
                 </div>
