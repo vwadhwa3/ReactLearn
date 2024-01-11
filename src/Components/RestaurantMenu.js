@@ -1,37 +1,51 @@
-import React, { useState,useEffect } from 'react'
- 
+import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
+import { useParams } from "react-router-dom";
 import { RestaurantMenu_API } from '../utils/constants';
-import Shimmer from './Shimmer' 
 
 const RestaurantMenu = () => {
-   const [resInfo,setResInfo] =useState(null);
+  const [resInfo, setResInfo] = useState(null);
 
-    useEffect(()=>{
-        fetchMenu();
-    },[])
-    const fetchMenu = async () => {
-        const data  = await fetch(RestaurantMenu_API);
-        const json = await data.json();
-        debugger
-        console.log(json)
-       //setResInfo(json.data.cards[0]?.card?.card?.info);
-      setResInfo(json.data);
-       //console.log( "in " +resInfo?.cards[0]?.card?.card?.info?.name)
-    }
-    //console.log("out " +resInfo?.cards[0]?.card?.card?.info?.name)
-   // const {itemCards} = resInfo?.cards[2].card
-   const {name ,cuisines,costForTwoMessage }  = resInfo?.cards[0]?.card?.card?.info
-  return resInfo == null ? <Shimmer/>  : (
-    <div className='menu'>
-        {/* <h1>{resInfo.name}</h1>
-        <h4>{resInfo.cuisines.join(' ')}</h4>
-        <h4>{resInfo.costForTwoMessage}</h4> */}
-        <ul>
-            <li>  </li>
-            <li>  </li>
-        </ul>
+  const { resId } = useParams();
+
+  useEffect(() => {
+    fetchMenu();
+  }, []);
+
+  const fetchMenu = async () => {
+    const data = await fetch(RestaurantMenu_API);
+    const json = await data.json();
+    setResInfo(json.data);
+  };
+
+  if (resInfo === null) return <Shimmer />;
+
+  const { name, cuisines, costForTwoMessage } =
+    resInfo?.cards[0]?.card?.card?.info;
+
+  const { itemCards } =
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+
+  console.log(itemCards);
+
+  return (
+    <div className="menu">
+      <h1>{name}</h1>
+      <p>
+        {cuisines.join(", ")} - {costForTwoMessage}
+      </p>
+      <h2>Menu</h2>
+      <ul>
+        {itemCards.map((item) => (
+          <li key={item.card.info.id}>
+            {item.card.info.name} -{" Rs."}
+            {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
+          </li>
+        ))}
+      </ul>
     </div>
-  )
-}
+  );
+};
 
 export default RestaurantMenu;
+ 
