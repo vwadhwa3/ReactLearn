@@ -15,19 +15,32 @@ import UserClass from "./UserClass";
 class About extends React.Component{
     constructor(props){
         super(props);
-        console.log("Parent constructor ")
+        this.state = {
+            userInfo:{
+                   name:"About page",
+                   location:"About page loaction",
+                   blog:"About blog",
+                   avatar_url:""
+            }
+        }
+    //    console.log("Parent constructor ")
     }
-    componentDidMount(){
-        console.log("Parent component Did Mount it will be called after child is mounted if no child it will be called after render  ")
+   async componentDidMount(){    
+      //  console.log("Parent component Did Mount it will be called after child is mounted if no child it will be called after render  ")
+        const data = await fetch("https://api.github.com/users/vwadhwa3")
+        const json = await data.json()
+        this.setState({
+            userInfo:json
+        })
     }
     render(){
-        console.log("Parent render")
+     //   console.log("Parent render")
+        const userInfo = this.state.userInfo
         return(
             <div>
                 <h1>About</h1>
-                {/* <User data={ {name:"function" ,Location:"delhi", contact:"@test123"}}/> */}
-                <UserClass name={"class"} Location ={"delhi"} contact={"@test123"}/>
-                <UserClass name={"class1"} Location ={"delhi1"} contact={"@test456"}/>
+                {/* <UserClass data={ {name:"function" ,location:"delhi", contact:"@test123"}}/>  */}
+                <UserClass userInfo={userInfo}/> 
             </div>
         )
     }
