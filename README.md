@@ -65,3 +65,19 @@ useEffect(()=>{
         console.log("UseEffect Return)
     }
 })
+
+
+single responsibility principle react
+
+The Single Responsibility Principle states that a component should have one clear purpose or responsibility. It should focus on specific functionality or behavior and avoid taking on unrelated tasks. Following SRP makes components more focused, modular, and easily comprehended and modified.
+ 
+
+hook are just utily functions
+
+useEffect
+uswState
+useParams
+
+
+
+
