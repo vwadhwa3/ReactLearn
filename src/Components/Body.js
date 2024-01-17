@@ -31,16 +31,18 @@ const Body= ()=>{
 
     const [searchText, setSearchText] = useState("")
 
-
     const onlineStatus = useOnlineStatus();
 
-    if(onlineStatus == false)
-        return(
-            <h1>Your are offilne</h1>
-        )
-    
-
-    return listOfRestaurants.length === 0 ? <Shimmer/> : (
+    if (onlineStatus === false)
+      return (
+        <h1>
+          Looks like you're offline!! Please check your internet connection;
+        </h1>
+      );
+  
+      return listOfRestaurants.length === 0 ? (
+        <Shimmer />
+      ) :   (
                 <div className="body" >
                         <div className="filter">
                                 <div className="search"> 
@@ -80,5 +82,6 @@ const Body= ()=>{
                         </div>
                 </div>
             )
+        
 }
 export default Body
