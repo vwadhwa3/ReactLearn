@@ -30,3 +30,38 @@ when i am rendering function components means
 on your web page if there is a functional components it loads thats means you are mounting the function or calling that function components
 
 never update state variable directly
+
+use this.setState{
+    obj: value
+}
+
+use case of componentwillunmount(){
+    clean up   
+    clearInterval(this.timer) 
+}
+
+
+this is shared with all the function in a class
+for eg  we have setInterval in componentdidmount
+
+this.timmer = setInterval(()=>{
+    console.log("hello")
+},1000)
+after 1 sec
+
+
+to clean setinterval in function 
+it called when we are unmounting the functional component 
+return a function useEffect
+
+
+useEffect(()=>{
+    const timer = setTimer(()=>{
+        
+    })
+    console.log(useEffect)
+    return ()=>{
+        clearTimer(timer)
+        console.log("UseEffect Return)
+    }
+})
