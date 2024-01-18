@@ -10,7 +10,7 @@ import RestaurantMenu from "./Components/RestaurantMenu";
  import Shimmer from "./Components/Shimmer";
  
 const Grocery  =  lazy(()=> import("./Components/Grocery"))
-const About = lasy (()=>  import("./Components/About"))
+const About = lazy(()=>  import("./Components/About"))
 const Footer = () => {
     return (
         <div className="">
