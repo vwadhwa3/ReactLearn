@@ -37,7 +37,7 @@ class About extends React.Component{
      //   console.log("Parent render")
         const userInfo = this.state.userInfo
         return(
-            <div>
+            <div className="contain bg-green-50 ">
                 <h1>About</h1>
                 {/* <UserClass data={ {name:"function" ,location:"delhi", contact:"@test123"}}/>  */}
                 <UserClass userInfo={userInfo}/> 

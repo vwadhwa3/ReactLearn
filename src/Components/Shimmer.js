@@ -1,27 +1,27 @@
 const Shimmer = () =>
 {
-    return <div className="shimmmer-constainer">
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
-            <div className="shimmer-card">cards...</div>
+    return <div className="flex flex-wrap">
+            <div className="w-72 h-80 bg-grey-200 ">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80 bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
+            <div className="w-72 h-80  bg-grey-200">cards...</div>
     </div>
 }
 

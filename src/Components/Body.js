@@ -1,4 +1,4 @@
-import RestaurantCard  from "./RestaurantCard"
+import RestaurantCard, {withIsOpenLable}  from "./RestaurantCard"
 import { useState } from "react"
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom"
@@ -10,9 +10,12 @@ const Body =()=>{
   //const listOfRestaurants  = useRestaurantList()
  const [listOfRestaurants ,filterRestaurants,setFilterRestaurants] = useRestaurantList()
   
+  console.log(listOfRestaurants);
  // const [filterRestaurants,setFilterRestaurants] = useState(listOfRestaurants)
   console.log("Body listOfRestaurants")
   console.log(listOfRestaurants)
+
+  const ResCardWithOpenLable = withIsOpenLable(RestaurantCard)
 
   const onlineStatus = useOnlineStatus();
 
@@ -26,12 +29,12 @@ const Body =()=>{
         <Shimmer />
       ) :   (
                 <div className="body" >
-                        <div className="filter">
-                                <div className="search"> 
-                                    <input type="text" className="search-box" placeholder="find" value={searchText} onChange={(e)=> {
+                        <div className="filter flex">
+                                <div className="search m-4 p-4 " > 
+                                    <input type="text" className="border border-black" placeholder="find" value={searchText} onChange={(e)=> {
                                         setSearchText(e.target.value)
                                     }} />
-                                    <button onClick={()=> {
+                                    <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={()=> {
                                         debugger
                                        console.log(searchText)
                                        const filterList  = listOfRestaurants.filter( 
@@ -43,7 +46,8 @@ const Body =()=>{
                                          
                                     }}>search</button>
                                 </div>
-                            <button className="filter-btn" onClick={()=> {
+                                <div className="search m-4 -p-4 flex items-center">
+                            <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={()=> {
                                 const filterList  = listOfRestaurants.filter( 
                                         (x) => x.info.avgRating > 4
                                         ) 
@@ -52,12 +56,15 @@ const Body =()=>{
                             }}>
                                 Top Rated Restaurant
                             </button>
+                            </div> 
                         </div>
-                        <div className="res-conatiner"> 
+                        <div className="res-conatiner flex flex-wrap"> 
                         {
                           filterRestaurants?.map(x =>
                                 <Link to={"/restaurants/"+x.info.id} key={x.info.id}>
+                                       { x.info.isOpen? <ResCardWithOpenLable  resData={x} /> :
                                         <RestaurantCard   resData={x} />
+                                       }
                                 </Link>  
                                 )
                         }

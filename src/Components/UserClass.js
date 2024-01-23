@@ -27,7 +27,7 @@ class UserClass  extends React.Component{
          const {name , location, blog,avatar_url } = this.props.userInfo
         
         return(
-            <div className="user-card">
+            <div>
                 {/* <h5>count: {count}</h5>
                <button onClick={()=> {
                 this.setState({
@@ -37,7 +37,7 @@ class UserClass  extends React.Component{
                 {/* <h3><UserNameClass name={name} /></h3>
                 <h3> <UserLocationClass Location={Location} />  </h3>
                 <UserChildClass  contact={contact} /> */}
-                <img src={avatar_url} alt="img"  className="avatar"/>
+                <img src={avatar_url} alt="img"  className="w-40 rounded-lg"/>
                 <h3>Name: {name} </h3>
                 <h3>Location: {location} </h3>
                 <h3>Contact: {blog} </h3>
