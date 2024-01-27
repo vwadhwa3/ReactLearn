@@ -78,7 +78,11 @@ useEffect
 uswState
 useParams
 
+useRef 
 
 
+controlled  vs uncontrolled components ?
 
-controlled and uncontrolled comp  ?  
+when child components is contyrolled by its parents component is called controlled 
+
+when child has its state it is uncontrolled components
