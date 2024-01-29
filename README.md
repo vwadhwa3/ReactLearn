@@ -121,3 +121,17 @@ redux  vs context
 is a state management libary 
 it is seprate from react 
 we need to install redux 
+
+outlet
+the outlet element is just used to determine where child routes of parent routes should be displayed within the parent routes instead of a new page
+
+Redux ToolKit
+    -Install @reduxjs/toolkit and react redux
+    -Build our store
+    -Connect our store to our app
+    -slice(cartSlice)
+    -dispatch(action)
+    -Selector
+
+
+https://playcode.io/

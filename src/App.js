@@ -7,9 +7,10 @@ import { createBrowserRouter ,RouterProvider,Outlet} from "react-router-dom";
 import Contact from "./Components/Contact";
 import Error from "./Components/Error";
 import RestaurantMenu from "./Components/RestaurantMenu";
- import Shimmer from "./Components/Shimmer";
- import UserContext from "./utils/UserContext";
- 
+import Shimmer from "./Components/Shimmer";
+import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 const Grocery  =  lazy(()=> import("./Components/Grocery"))
 const About = lazy(()=>  import("./Components/About"))
 
@@ -33,18 +34,20 @@ const AppLayout =()=>{
     useEffect(() => {
       // Make an API call and send username and password
       const data = {
-        name: "Akshay Saini",
+        name: "Varun Wadhwa",
       };
       setUserName(data.name);
     }, []);
     return <div className="app" id="app">
-        <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-        
-        <Header/>
-       
-        <Outlet/>
-        <Footer/>
-        </UserContext.Provider>
+        <Provider store={appStore} >   {/*Redux Store */}
+                <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+                {/* <UserContext.Provider value={{ loggedInUser: "Mehul Wadhwa", setUserName }}> */}
+                <Header/>
+                {/* </UserContext.Provider> */}
+                <Outlet/>
+                <Footer/>
+                </UserContext.Provider>
+        </Provider>
     </div>
 }
 
