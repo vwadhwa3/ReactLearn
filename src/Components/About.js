@@ -1,5 +1,5 @@
 import React from "react"
- 
+import UserContext from "../utils/UserContext";
 import UserClass from "./UserClass";
 
 // const About = () =>{
@@ -39,6 +39,12 @@ class About extends React.Component{
         return(
             <div className="contain bg-green-50 ">
                 <h1>About</h1>
+
+                <UserContext.Consumer>
+            {({ loggedInUser }) => (
+              <h1 className="text-xl font-bold">{loggedInUser}</h1>
+            )}
+          </UserContext.Consumer>
                 {/* <UserClass data={ {name:"function" ,location:"delhi", contact:"@test123"}}/>  */}
                 <UserClass userInfo={userInfo}/> 
             </div>

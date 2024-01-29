@@ -35,7 +35,7 @@ const RestaurantMenu = () => {
      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
  );
 
-
+const dummyData = "Dummy Data";
   return (
     <div className="text-center">
       <h1 className=" p-1 m-6 text-2xl font-bold ">{name}</h1>
@@ -43,7 +43,8 @@ const RestaurantMenu = () => {
         {cuisines.join(", ")} - {costForTwoMessage}
       </p>
       {categories.map((category, index) => (
-        <ResCategories
+        <ResCategories 
+          dummyData={dummyData}
           key={category?.card?.card.title}
           data={category?.card?.card} 
           showItems={index === showIndex ? true : false}

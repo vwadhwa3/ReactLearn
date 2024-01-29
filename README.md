@@ -86,3 +86,38 @@ controlled  vs uncontrolled components ?
 when child components is contyrolled by its parents component is called controlled 
 
 when child has its state it is uncontrolled components
+
+
+props drilling ?
+
+React Context ?
+
+we can have many react context
+
+can we wrap multipal provider ?
+
+ans yes 
+
+
+
+it solves the problem of props drilling 
+
+in function 
+ const data = useContext(userContext)
+
+in class  
+
+UserCOntext.Consumer
+
+we need to have a callback function 
+eg 
+
+ <userContext.Consumer>
+                    {({loggedInUser}) => (
+                        <h1>{loggedInUser} </h1>
+                    )  }
+                </userContext.Consumer>
+redux  vs context
+is a state management libary 
+it is seprate from react 
+we need to install redux 

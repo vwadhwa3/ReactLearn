@@ -1,12 +1,14 @@
 import RestaurantCard, {withIsOpenLable}  from "./RestaurantCard"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom"
 import useOnlineStatus from "../utils/useOnlineStatus"
 import useRestaurantList from "../utils/useRestaurantList"
+import userContext from "../utils/UserContext"
+
 
 const Body =()=>{
-  const [searchText, setSearchText] = useState("")
+  const [searchText, setSearchText] = useState()
   //const listOfRestaurants  = useRestaurantList()
  const [listOfRestaurants ,filterRestaurants,setFilterRestaurants] = useRestaurantList()
   
@@ -15,6 +17,8 @@ const Body =()=>{
   console.log("Body listOfRestaurants")
   console.log(listOfRestaurants)
 
+  const { loggedInUser,setUserName} = useContext(userContext);
+ 
   const ResCardWithOpenLable = withIsOpenLable(RestaurantCard)
 
   const onlineStatus = useOnlineStatus();
@@ -57,6 +61,16 @@ const Body =()=>{
                                 Top Rated Restaurant
                             </button>
                             </div> 
+                            <div className="search m-4 -p-4 flex items-center"> <label>Username:</label> 
+                                
+                            <input
+                                className="border border-black p-2"
+                                Value={loggedInUser}
+                                onChange={(e) => setUserName(e.target.value)
+                              
+                              }
+                              />
+                            </div>
                         </div>
                         <div className="res-conatiner flex flex-wrap"> 
                         {

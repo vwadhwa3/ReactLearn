@@ -1,5 +1,6 @@
 import {CDN_URL} from "../utils/constants"
-const ResCategoriesList = ({items}) => {
+const ResCategoriesList = ({items , dummyData}) => {
+    console.log(dummyData)
     return (
       <div>
         {items.map((item) => (
