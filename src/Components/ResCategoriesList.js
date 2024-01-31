@@ -3,9 +3,9 @@ import {CDN_URL} from "../utils/constants"
 import {addItem} from "../utils/cartSlice"
 const ResCategoriesList = ({items , dummyData}) => {
   const dispatch =useDispatch()
-    const handleAddItem = ()=>{
+    const handleAddItem = (item)=>{
       //Dispatch an action
-      dispatch(addItem("pizza"))
+      dispatch(addItem(item))
     }
     return (
       <div>
@@ -28,7 +28,7 @@ const ResCategoriesList = ({items , dummyData}) => {
             </div>
             <div className="w-3/12 p-4">
               <div className="absolute">
-                <button onClick={handleAddItem} className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg">
+                <button onClick={() =>handleAddItem(item.card.info.name)} className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg">
                   Add +
                 </button>
               </div>
