@@ -3,16 +3,17 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
     name:'cart',
     initialState:{
-        items:[]
+        items:["bugger","pizza"]
     },
     reducers:{
         addItem: (state,action)=>{
+            // mutaing the state here
             state.items.push(action.payload)
         },
-        removeItem:(state)=>{  //,action
+        removeItem:(state,action)=>{  //,action
             state.items.pop()   
         },
-        clearCart:(state)=>{
+        clearCart:(state,action)=>{
             state.items.length=0;  
             //state.items.lenght=[] will not work 
         }
