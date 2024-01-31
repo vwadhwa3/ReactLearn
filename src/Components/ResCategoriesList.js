@@ -28,7 +28,7 @@ const ResCategoriesList = ({items , dummyData}) => {
             </div>
             <div className="w-3/12 p-4">
               <div className="absolute">
-                <button onClick={() =>handleAddItem(item.card.info.name)} className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg">
+                <button onClick={() =>handleAddItem(item)} className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg">
                   Add +
                 </button>
               </div>
